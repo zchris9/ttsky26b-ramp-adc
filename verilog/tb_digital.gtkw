@@ -1,0 +1,61 @@
+[*]
+[*] GTKWave Analyzer v4.0.0-prealpha (8ba24ab) (w)1999-2022 BSI
+[*] Thu May 14 16:37:09 2026
+[*]
+[dumpfile] "/foss/designs/tt_um_ramp_adc/verilog/tb_digital.vcd"
+[dumpfile_mtime] "Thu May 14 16:25:41 2026"
+[dumpfile_size] 48865
+[savefile] "/foss/designs/tt_um_ramp_adc/verilog/test.gtkw"
+[timestart] 2379500
+[size] 1920 995
+[pos] -1 -1
+*-15.908271 2605000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[markername] AA
+[markername] BB
+[markername] CC
+[markername] DD
+[markername] EE
+[markername] FF
+[markername] GG
+[markername] HH
+[markername] II
+[markername] JJ
+[markername] KK
+[markername] LL
+[markername] MM
+[markername] NN
+[markername] OO
+[markername] PP
+[markername] QQ
+[markername] RR
+[markername] SS
+[markername] TT
+[markername] UU
+[markername] VV
+[markername] WW
+[markername] XX
+[markername] YY
+[markername] ZZ
+[treeopen] tb_digital.
+[sst_width] 297
+[signals_width] 134
+[sst_expanded] 1
+[sst_vpaned_height] 287
+@28
+tb_digital.dut.rst_n
+tb_digital.clk
+@22
+tb_digital.dut.cnt[7:0]
+@28
+tb_digital.dut.cmp_out
+tb_digital.dut.cmp_out_sync
+tb_digital.dut._cmp_out_sync
+tb_digital.dut.rst_ramp
+@23
+tb_digital.dut.code_int[7:0]
+@22
+tb_digital.dut.code[7:0]
+@28
+tb_digital.dut.sample_valid
+[pattern_trace] 1
+[pattern_trace] 0
