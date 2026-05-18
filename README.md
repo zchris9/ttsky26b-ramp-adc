@@ -1,36 +1,32 @@
 ![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg)
 
-# Tiny Tapeout Analog Project Template
+# tt_um_ramp_adc — 2-channel 8-bit single-slope ADC
 
-- [Read the documentation for project](docs/info.md)
+A Tiny Tapeout sky130A analog project: a 2-channel, 8-bit single-slope
+analog-to-digital converter. The selected analog input is compared
+against an on-chip linear ramp; the 8-bit count at the moment the ramp
+crosses the input is the output code.
 
-## What is Tiny Tapeout?
+- **Inputs**: 2 analog channels on `ua[0]`/`ua[1]`, recommended range 0 – ~1.0 V
+- **Output**: 8-bit code on `uo_out[7:0]`, validated by `uio_out[0]`
+- **Clock**: ~4 MHz recommended → 64 µs conversion, ~16 kSPS per channel
+- **Architecture**: bias gen, ramp gen, 2:1 analog mux, sample-and-hold (with bypass),
+  PMOS-input comparator, LibreLane-synthesized digital controller
 
-Tiny Tapeout is an educational project that aims to make it easier and cheaper than ever to get your digital designs manufactured on a real chip.
+See [docs/info.md](docs/info.md) for full pinout, testing instructions, and
+the explanation of why the usable input range is 0 – ~1.0 V (PMOS-input
+common-mode limit).
 
-To learn more and get started, visit https://tinytapeout.com.
+## Repository layout
 
-## Analog projects
-
-For specifications and instructions, see the [analog specs page](https://tinytapeout.com/specs/analog/).
-
-## Enable GitHub actions to build the results page
-
-- [Enabling GitHub Pages](https://tinytapeout.com/faq/#my-github-action-is-failing-on-the-pages-part)
-
-## Resources
-
-- [FAQ](https://tinytapeout.com/faq/)
-- [Digital design lessons](https://tinytapeout.com/digital_design/)
-- [Learn how semiconductors work](https://tinytapeout.com/siliwiz/)
-- [Join the community](https://tinytapeout.com/discord)
-
-## What next?
-
-- [Submit your design to the next shuttle](https://app.tinytapeout.com/).
-- Edit [this README](README.md) and explain your design, how it works, and how to test it.
-- Share your project on your social network of choice:
-  - LinkedIn [#tinytapeout](https://www.linkedin.com/search/results/content/?keywords=%23tinytapeout) [@TinyTapeout](https://www.linkedin.com/company/100708654/)
-  - Mastodon [#tinytapeout](https://chaos.social/tags/tinytapeout) [@matthewvenn](https://chaos.social/@matthewvenn)
-  - X (formerly Twitter) [#tinytapeout](https://twitter.com/hashtag/tinytapeout) [@tinytapeout](https://twitter.com/tinytapeout)
-  - Bluesky [@tinytapeout.com](https://bsky.app/profile/tinytapeout.com)
+```
+docs/info.md   chip datasheet
+gds/           final GDS output
+lef/           final LEF output
+librelane/     LibreLane config for synthesizing the digital macro
+mag/           magic layout files for each block and the top level
+xschem/        schematics (each block + top-level)
+src/project.v  TT blackbox stub (top module pin list)
+verilog/       digital RTL (digital.v) and testbench
+info.yaml      TT submission metadata
+```
